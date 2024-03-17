@@ -1,39 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 
+
+
+img, svg {
+    display: block;
+    max-width: 100%;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Abel';
+    font-family: 'Abel', sans-serif;
+
 }
+
+html, body {
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+
+  }
 
 h1,h2,h3,h4,h5,h5,p,ul {
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.1rem;
 
 }
 
+/* Header and navbar*/
+
 header {
-    height: 5rem;
-    width: 100%;
-    display: flex;
-    padding: 0 8%;
     position: fixed;
     z-index: 999; 
+    width: 100%;
+    height: 5rem;    
+    display: flex;
+    padding: 0 8%;    
     justify-content: space-between;
     align-items: center;
     background-color: #0A192F;
     border-bottom: 1px solid #C8D2F2;
-    overflow: hidden;
+
 }
 
 logo {
     height: auto;
-    width: auto;
     padding: 5px 0;    
 }
 
 nav {
-    width: auto;
+
     height: 100%;
     display: flex;
     padding: 1rem 0;
@@ -42,9 +57,10 @@ nav {
 }
 
 nav ul {
+
     display: flex;
     list-style: none;
-    gap: 6rem;
+    gap: 5rem;
     align-items: center;
 
 }
@@ -57,7 +73,28 @@ nav ul li {
 
 nav ul li a{
     text-decoration: none;
-    color: #C8D2F2;  
+    color: #C8D2F2;
+    position: relative;  
+}
+
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    height: 0.1rem;
+    width: 100%;
+    border-radius: 100%;
+    background: linear-gradient(to right, #29B52F, #7729B5, #B52929, #B5AF29, #B5AF29, #7729B5, #7729B5);
+    background-size: 200% 100%;
+    bottom: 0rem;
+    left: 0;
+    opacity: 0.6;
+    transform: scale(0, 1);
+    transition: 0.2s;
+}
+
+nav ul li a:hover::after {
+    transform: scale(1, 1);
 }
 
 nav ul button {    
@@ -71,7 +108,12 @@ nav ul button {
     text-align: center;
     padding: 8px 12px;
     cursor: pointer;
-    z-index: 999;    
+    z-index: 999;
+    transition: ease 0.3s;    
+}
+
+nav ul button:hover {
+    scale: 1.1;
 }
 
 
@@ -82,16 +124,57 @@ nav ul button a {
     z-index: 999;
 }
 
+.hamburger {
+    display: none;
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+    transition: 0.1s ease-in-out;
+}
+
+.hamburger .bar,
+.hamburger::after,
+.hamburger::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin: 4px 0;
+    background-color: #C8D2F2;
+    border-radius: 9999px;
+}
+
+
+
+/*Hero section*/
+
+.helper {
+    width: 100%;
+    height: 5rem;
+}
+
+.hero-section {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
 
 #particles-js {
+    position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     z-index: -1;
     background-color: #0A192F;
+    overflow: hidden;
 }
 
 .hero-section-content {
@@ -99,6 +182,14 @@ nav ul button a {
     top: 50%;
     left: 8%;
     overflow: hidden;
+    z-index: 3;
+}
+
+.hero-section-content p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 .hero-section h1,
@@ -116,124 +207,383 @@ nav ul button a {
 
 .image-container {
     position: absolute;
-    top: 0%;
     right: 8%;
     height: 100vh;
-    overflow: hidden;
+
+    border: 1px solid yellow;
 }
 
 .image-container svg {
     position: relative;
-    top: -25%;
-    height: 160vh;
-    width: 100%;
+    top: -20%;
+    height: 180vh;
+    width: auto;
+
 }
+
+/* Skills section */
 
 .skills {
-    position: relative;
-    height: 70vh;
+    padding: 6rem 8%;
+    min-height: 35rem;
+    display: flex;    
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;    
+    gap: 3rem;
     background-color: #C8D2F2;
+        
 }
 
-.skills-content {
-    position: absolute;
-    top: 45%;
-    left: 8%;    
+
+
+.skills-content {    
+    max-width: fit-content;
+    display: flex;
+    flex-direction: column;       
 }
+
 
 .skills-content h2,
-.skills-content h3 {
+.skills-content h3 { 
     color: #0A192F;
 }
 
 .skills-content h3 {
-    margin-top: 1.6rem;
+    margin-top: 6.2rem;
     line-height: 2rem;
 }
 
-.skills-wrapper {
-    position: absolute;
-    top: 20%;
-    right: 8%;
-    width: 52%;
-    height: 60%;
-    align-items: center;
+
+
+.skills-wrapper {    
+    max-width: 52rem;
+    padding-inline: auto;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;    
+    gap: 2.5rem;    
+    border: 1px solid red;
 }
 
 .skills-wrapper-upper,
 .skills-wrapper-lower {
-    height: 50%;
-    width: 80%;
-    display: flex;
-    gap: 7%;
+    display: flex;     
+    gap: 2.5rem;
 
 }
 
 .skills-wrapper-upper {
-    align-items: start;
+    align-self: flex-start;    
 }
 
-.skills-wrapper-lower {
-    align-items: end;
+.skills-wrapper-lower {    
+    align-self: flex-end;
 }
 
 
-.skills-wrapper-lower {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-}
+
 
 .skills-wrapper-card {    
-    width: 20rem;
-    height: 90%;
+    min-width: 10rem;
+    min-height: 9rem;
+    padding: 0.8rem 0;
     border-radius: 8px;
     background-color: #0A192F;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     color: #4EC4B1;
+    box-shadow: 8px 8px 8px 0px #4D4D4D;
 }
 
 .card-svg {
-
-    max-height: 40%;
+    max-height: 90%;
     max-width: auto;
     object-fit: cover;
 }
 
 
-.card-content {
-    margin-top: 1.5rem;
-}
-
 .card-svg svg {
-    width: 100%;
+    width: 90%;
     height: 100%;
     object-fit: cover;
 }
 
 
+@media screen and (max-width: 1567px) {
+
+    .skills-content h3 {
+        margin-top: 3rem; 
+    }    
+    .skills-wrapper {
+        margin-left: auto;
+    }
+}
+
+
 /* Works section */
 
-.works {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
+.works {    
+    padding: 6rem 8%;    
+    background-image: url(resources/Works.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
-
-.grid-container svg {
-    width: 100%;
-    height: 100%;
-    object-fit:cover;
-    object-position: center;
-}
-
 
 
 .works h2 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.works-content-current {
+   background: #695078;
+}
+
+.works-scroller {
+    margin-top: 3rem;
+    height: 75vh;
+
+    border-radius: 16px;
+    border: 3px solid #0a192f4e;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;    
+    position: relative;
+    z-index: 0;
+    box-shadow: 8px 8px 8px 0px #4D4D4D;
+}
+
+
+
+
+.works-scroller::-webkit-scrollbar {
+    height: 2.2rem;    
+    cursor: pointer;
+    
+}
+
+.works-scroller::-webkit-scrollbar-track {
+    height: 2.2rem;
+    background-color: #C8D2F2;
+    
+    border-radius: 0 0 12px 12px;
+
+}
+
+.works-scroller::-webkit-scrollbar-thumb { 
+    height: 2.2rem;    
+    background: #0A192F;
+    border-radius: 0 0 12px 12px;
+    
+}
+
+
+.snaps-inline {
+    scroll-snap-type: inline mandatory;
+}
+
+.snaps-inline > * {
+    scroll-snap-align: start;
+}
+
+.works-aequilibrum {
+    display: grid;
+    
+    min-height: 100%;
+    width: 100%;    
+    background-image: linear-gradient(to bottom right,  #695078, #9675AE, #C7A8D1);
+    margin-bottom: 1rem;
+}
+
+.works-giotur {
+    display: grid;
+    min-height: 100%;
+    width: 100%;
+    background-color:#4EC4B1;
+    margin-bottom: 1rem;
+}
+
+
+/* About me section */
+
+.about-me-section {
+    display: flex;
+    background-color: #0A192F;
+    gap: 2rem;
+}
+
+.about-me-section-bg {   
+    flex: 0 0 45rem;
+    height: 45rem;
+    background-image: url(resources/About_me_photo.png);
+    background-repeat: no-repeat; 
+    background-position: -100px right;
+    background-size: cover;
+    background-origin:  right;
+    position: relative;
+    z-index: 1;
+
+}
+
+
+
+.about-me-section-bg::after{
+    content: "";
     position: absolute;
-    top: 15%;
-    right: 8%;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 101%;
+    z-index: 2;    
+    background-image: linear-gradient(to bottom,#0a192f08, #0a192fc7 76%, #0a192feb 86%,#0A192F 100%);
+    
+}
+
+.about-me-section-content {
+    padding: 6rem 8% 6rem 0;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    z-index: 4;
+    flex: 1 1;
+
+}
+
+.about-me-section-content h3,
+.about-me-section-content h2 {
+    color: #4EC4B1;
+}
+
+.about-me-section-content h3 {
+    margin-top: 3.2rem;
+}
+
+/* Contact section */
+
+.contact {
+    display: flex;
+    padding: 6rem 8%;
+    align-items: center;
+    background-color: #C8D2F2;
+    position: relative;
+    z-index: 1;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(at 10% 0, #29B52F , #7729B5 , #B52929 ,#B5AF29 );
+    
+    background-repeat: no-repeat;
+    opacity: .2;
+
+
+    z-index: 1;
+}
+
+.contact-content {
+    z-index: 2;
+}
+
+.contact-content h2,
+.contact-content h3 {
+    color:#0A192F;
+
+}
+
+.contact-content h3 {
+    margin-top: 3.2rem;
+}
+
+.contact-social {
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    z-index: 2;
+
+}
+
+.contact-social-container {
+    display: flex;    
+    align-items: center;
+    gap: 2rem;
+}
+
+.contact-social-container a {
+    text-decoration: none;
+    color: #0A192F;
+    position: relative;
+}
+
+
+
+.contact-social-container a::after {
+    content: "";
+    position: absolute;
+    height: 0.15rem;
+    width: 100%;
+    
+    background: linear-gradient(to right, #29B52F, #7729B5, #B52929, #B5AF29, #B5AF29, #7729B5, #7729B5);
+    background-size: 200% 100%;
+    bottom: -0.1rem;
+    left: 0;
+    opacity: 0.6;
+    transform: scale(0, 1);
+    transition: 0.2s;
+}
+
+.contact-social-container a:hover::after {
+    transform: scale(1, 1);
+}
+
+
+/* General medias*/
+
+@media screen and (max-width:670px) {
+    
+    nav ul {
+        display: none;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+
+    .skills-wrapper,
+    .skills-wrapper-upper,
+    .skills-wrapper-lower {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .skills-wrapper-upper,
+    .skills-wrapper-lower {
+        gap: 1.2rem;
+    }
+
+    .skills-wrapper-lower {    
+        align-self: flex-start;
+    }
+
+    .skills-wrapper-card {    
+        min-width: 7rem;
+        min-height: 3rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-me-section-bg {   
+        flex: 0 0 12rem;
+        height: 12rem;
+    }
 }
