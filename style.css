@@ -207,23 +207,25 @@ nav ul button a {
 
 .image-container {
     position: absolute;
-    right: 8%;
-    height: 100vh;
+    top: -20rem;
+    width: 50rem;
+    height: 180vh;  
+    padding: 0;
+    right: 3%;      
+    background: url('data:image/svg+xml,<svg width="1834" height="3116" viewBox="0 0 1834 3116" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(%23filter0_f_174_19)"><path d="M1329.82 314.239L1613.53 341.911L1413.12 2895.7L1129.41 2868.02L1329.82 314.239Z" fill="%23B52929"/><rect width="363.601" height="2608.1" transform="matrix(0.911772 0.410697 -0.340713 0.940167 1108.61 220)" fill="%23B5AF29"/><rect width="361.017" height="2580.23" transform="matrix(0.958161 0.286231 -0.233686 0.972312 1160.97 253.965)" fill="%2329B52F"/><rect width="275.919" height="2555.97" transform="matrix(0.98122 0.19289 -0.156217 0.987723 1253.92 286.566)" fill="%237729B5"/></g><defs><filter id="filter0_f_174_19" x="0" y="0" width="1833.53" height="3115.7" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur stdDeviation="110" result="effect1_foregroundBlur_174_19"/></filter></defs></svg>');
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: contain;
 
-    border: 1px solid yellow;
+
 }
 
-.image-container svg {
-    position: relative;
-    top: -20%;
-    height: 180vh;
-    width: auto;
 
-}
 
 /* Skills section */
 
 .skills {
+    width: 100%;
     padding: 6rem 8%;
     min-height: 35rem;
     display: flex;    
@@ -263,7 +265,7 @@ nav ul button a {
     flex-grow: 1;
     flex-direction: column;    
     gap: 2.5rem;    
-    border: 1px solid red;
+
 }
 
 .skills-wrapper-upper,
@@ -287,7 +289,7 @@ nav ul button a {
 .skills-wrapper-card {    
     min-width: 10rem;
     min-height: 9rem;
-    padding: 0.8rem 0;
+    padding: 1rem 1rem;
     border-radius: 8px;
     background-color: #0A192F;
     display: flex;
@@ -306,10 +308,11 @@ nav ul button a {
 
 
 .card-svg svg {
-    width: 90%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
 
 
 @media screen and (max-width: 1567px) {
@@ -412,27 +415,25 @@ nav ul button a {
 /* About me section */
 
 .about-me-section {
-    display: flex;
+    width: 100%;
+    min-height: 42rem;
     background-color: #0A192F;
-    gap: 2rem;
+
 }
 
-.about-me-section-bg {   
-    flex: 0 0 45rem;
-    height: 45rem;
-    background-image: url(resources/About_me_photo.png);
-    background-repeat: no-repeat; 
-    background-position: -100px right;
-    background-size: cover;
-    background-origin:  right;
+.about_me_photo {
     position: relative;
-    z-index: 1;
+    max-width: 40rem;
+    max-height: 40rem;
+    float: left;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
 
 }
 
 
 
-.about-me-section-bg::after{
+.about_me_photo::before{
     content: "";
     position: absolute;
     top: 0;
@@ -446,12 +447,11 @@ nav ul button a {
 
 .about-me-section-content {
     padding: 6rem 8% 6rem 0;
-    display: flex;
-    flex-direction: column;
+
     width: auto;
     z-index: 4;
     flex: 1 1;
-
+    border: 1px solid yellow;
 }
 
 .about-me-section-content h3,
@@ -466,6 +466,8 @@ nav ul button a {
 /* Contact section */
 
 .contact {
+    width: 100%;
+    height: auto;
     display: flex;
     padding: 6rem 8%;
     align-items: center;
@@ -530,7 +532,7 @@ nav ul button a {
 .contact-social-container a::after {
     content: "";
     position: absolute;
-    height: 0.15rem;
+
     width: 100%;
     
     background: linear-gradient(to right, #29B52F, #7729B5, #B52929, #B5AF29, #B5AF29, #7729B5, #7729B5);
@@ -551,6 +553,7 @@ nav ul button a {
 
 @media screen and (max-width:670px) {
     
+    /* Navbar*/
     nav ul {
         display: none;
     }
@@ -559,31 +562,78 @@ nav ul button a {
         display: block;
     }
 
-    .skills-wrapper,
-    .skills-wrapper-upper,
-    .skills-wrapper-lower {
-        justify-content: center;
-        align-items: center;
+    /*Hero section*/
+
+    .hero-section {
+        height: 85vh;
+    }
+
+    .hero-section-content {
+        top: 40%;
+        left: 8%;
+    }
+
+    .image-container {
+        right: -3rem;
+  
+    }
+
+    .skills-wrapper {
+
+        max-width: 100%;
+
     }
 
     .skills-wrapper-upper,
     .skills-wrapper-lower {
-        gap: 1.2rem;
+        gap: none;
+
+        width: 100%;
+        justify-content: space-between; 
+
+        align-self: center;
+
     }
 
-    .skills-wrapper-lower {    
-        align-self: flex-start;
-    }
-
+  
     .skills-wrapper-card {    
-        min-width: 7rem;
-        min-height: 3rem;
-        justify-content: center;
-        align-items: center;
+        min-width: 5.9rem;
+        max-width: 5.3rem;
+        min-height: 7.8rem;
+        justify-content: space-between;
+  
     }
+
+    .skills-wrapper-card svg {
+        height: 40px;
+
+    }
+
+    .skills-wrapper-card h3 {
+        font-size: .85rem;
+
+    }
+
+
+    /*About me section*/
+
+    
 
     .about-me-section-bg {   
         flex: 0 0 12rem;
         height: 12rem;
+        border-radius: 100%;
+
+    }
+
+
+    /* Contact me section*/
+
+    .contact {
+        flex-direction: column;
+    }
+
+    .contact-social {
+        padding: 5rem 0 0 0;
     }
 }
