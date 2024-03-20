@@ -81,14 +81,14 @@ nav ul li a{
 nav ul li a::after {
     content: "";
     position: absolute;
-    height: 0.1rem;
+    height: 0.15rem;
     width: 100%;
     border-radius: 100%;
     background: linear-gradient(to right, #29B52F, #7729B5, #B52929, #B5AF29, #B5AF29, #7729B5, #7729B5);
     background-size: 200% 100%;
     bottom: 0rem;
     left: 0;
-    opacity: 0.6;
+    opacity: 0.7;
     transform: scale(0, 1);
     transition: 0.2s;
 }
@@ -211,7 +211,7 @@ nav ul button a {
     width: 50rem;
     height: 180vh;  
     padding: 0;
-    right: 3%;      
+    right: 5%;      
     background: url('data:image/svg+xml,<svg width="1834" height="3116" viewBox="0 0 1834 3116" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(%23filter0_f_174_19)"><path d="M1329.82 314.239L1613.53 341.911L1413.12 2895.7L1129.41 2868.02L1329.82 314.239Z" fill="%23B52929"/><rect width="363.601" height="2608.1" transform="matrix(0.911772 0.410697 -0.340713 0.940167 1108.61 220)" fill="%23B5AF29"/><rect width="361.017" height="2580.23" transform="matrix(0.958161 0.286231 -0.233686 0.972312 1160.97 253.965)" fill="%2329B52F"/><rect width="275.919" height="2555.97" transform="matrix(0.98122 0.19289 -0.156217 0.987723 1253.92 286.566)" fill="%237729B5"/></g><defs><filter id="filter0_f_174_19" x="0" y="0" width="1833.53" height="3115.7" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur stdDeviation="110" result="effect1_foregroundBlur_174_19"/></filter></defs></svg>');
     background-repeat: no-repeat;
     background-position: center right;
@@ -301,7 +301,7 @@ nav ul button a {
 }
 
 .card-svg {
-    max-height: 90%;
+    max-height: 100%;
     max-width: auto;
     object-fit: cover;
 }
@@ -416,24 +416,33 @@ nav ul button a {
 
 .about-me-section {
     width: 100%;
+    
     min-height: 42rem;
     background-color: #0A192F;
 
 }
 
-.about_me_photo {
-    position: relative;
-    max-width: 40rem;
-    max-height: 40rem;
+.about_me_bg {
+    width: 40rem;
+    height: 40rem;
+
     float: left;
-    margin-right: 2rem;
+    
     margin-bottom: 2rem;
+    position: relative;
+}
+
+.about_me_photo {
+    z-index: 1;
+    max-width: 100%;
+    max-height: 100%;
+
 
 }
 
 
 
-.about_me_photo::before{
+.about_me_bg::before{
     content: "";
     position: absolute;
     top: 0;
@@ -441,17 +450,23 @@ nav ul button a {
     min-width: 100%;
     height: 101%;
     z-index: 2;    
-    background-image: linear-gradient(to bottom,#0a192f08, #0a192fc7 76%, #0a192feb 86%,#0A192F 100%);
+    background: linear-gradient(to bottom,#0a192f08, #0a192fc7 76%, #0a192feb 86%,#0A192F 100%);
     
 }
 
-.about-me-section-content {
-    padding: 6rem 8% 6rem 0;
+@media screen and (max-width:60rem) {
+    .about_me_bg{
+        width: 25rem;
+        height: 25rem;
+    }
+}
 
+.about-me-section-content {
+    padding: 6rem 8% 6rem 08%;
     width: auto;
     z-index: 4;
     flex: 1 1;
-    border: 1px solid yellow;
+
 }
 
 .about-me-section-content h3,
@@ -483,12 +498,9 @@ nav ul button a {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: radial-gradient(at 10% 0, #29B52F , #7729B5 , #B52929 ,#B5AF29 );
-    
+    background-image: radial-gradient(at 10% 0, #29B52F , #7729B5 , #B52929 ,#B5AF29 );    
     background-repeat: no-repeat;
     opacity: .2;
-
-
     z-index: 1;
 }
 
@@ -532,14 +544,14 @@ nav ul button a {
 .contact-social-container a::after {
     content: "";
     position: absolute;
-
+    height: 0.15rem;
     width: 100%;
-    
+    border-radius: 100%;
     background: linear-gradient(to right, #29B52F, #7729B5, #B52929, #B5AF29, #B5AF29, #7729B5, #7729B5);
     background-size: 200% 100%;
-    bottom: -0.1rem;
+    bottom: 0rem;
     left: 0;
-    opacity: 0.6;
+    opacity: 0.7;
     transform: scale(0, 1);
     transition: 0.2s;
 }
@@ -578,27 +590,32 @@ nav ul button a {
   
     }
 
+
+
+    /* Skills section*/
+
     .skills-wrapper {
-
-        max-width: 100%;
-
+        width: 100%;
+        justify-content: space-between;
+        align-items: space-between;
+        
     }
 
     .skills-wrapper-upper,
     .skills-wrapper-lower {
         gap: none;
 
-        width: 100%;
-        justify-content: space-between; 
 
+        justify-content: space-between;
+        
         align-self: center;
 
     }
 
   
     .skills-wrapper-card {    
-        min-width: 5.9rem;
-        max-width: 5.3rem;
+        min-width: 5.7rem;
+        max-width: 5.7rem;
         min-height: 7.8rem;
         justify-content: space-between;
   
@@ -610,20 +627,34 @@ nav ul button a {
     }
 
     .skills-wrapper-card h3 {
-        font-size: .85rem;
+        font-size: .83rem;
 
     }
 
 
     /*About me section*/
 
+    .about_me_bg {
+        width: 10rem;
+        height: 10rem;
+        margin-top: 6rem;
+        margin-left: 8%;
+        overflow: hidden;
+        border-radius: 8px;
+        margin-right: 3rem;
+
+    }
+
+    .about_me_bg::before {
+        background: none;
+    }
+
+    .about_me_photo {
+        border-radius: 8px;
+        transform: scale(3.2, 3.2);
+        transform-origin: 53% 8%;
     
-
-    .about-me-section-bg {   
-        flex: 0 0 12rem;
-        height: 12rem;
-        border-radius: 100%;
-
+        
     }
 
 
