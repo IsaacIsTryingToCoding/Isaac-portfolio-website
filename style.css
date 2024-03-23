@@ -48,12 +48,11 @@ logo {
 }
 
 nav {
-
     height: 100%;
     display: flex;
     padding: 1rem 0;
     align-items: center;
-    
+    transition: all ease-in-out 0.2s;
 }
 
 nav ul {
@@ -566,10 +565,33 @@ nav ul button a {
 @media screen and (max-width:670px) {
     
     /* Navbar*/
+    nav {
+        
+        position: absolute;
+        top: 5rem;
+        width: 100%;
+        right: -110%;
+        height: auto;
+        padding: 0;
+        height: calc(100vh - 5rem);
+        background-color: #0A192F;
+        opacity: 0.96 ;
+        align-items:start;
+    }
+
     nav ul {
-        display: none;
+        padding: 3rem;
+        flex-direction: column;
+        width: 100%;
+        
+        gap: 3rem;
     }
     
+    .open nav {
+        right: 0;
+    }
+
+
     .hamburger {
         display: block;
     }
@@ -579,6 +601,8 @@ nav ul button a {
     .hero-section {
         height: 85vh;
     }
+
+
 
     .hero-section-content {
         top: 40%;
