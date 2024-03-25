@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Isaac Tapia - Portfolio Site</title>
+    <meta http-equiv="X-UA-Compatibile" content="ie=edge">
+    <title>Isaac Tapia - Portfolio Website</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,16 +16,16 @@
             </a>
         </logo>
         <nav>            
-                <ul>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#works">Works</a></li>
-                    <li><a href="#about-me">About me</a></li>
-                    <button><a href="#contact">Contact me</a></button>
-                </ul>                
-                                   
+            <ul>
+                <li><a class="nav-a" href="#skills">Skills</a></li>
+                <li><a class="nav-a" href="#works">Works</a></li>
+                <li><a class="nav-a" href="#about-me">About me</a></li>
+                    
+            </ul>              
         </nav>
+        <button class="contact-btn"><a href="#contact">Contact me</a></button>
 
-        <button class="hamburger">
+        <button class="hamburger ">
             <div class="bar"></div>
         </button>
         
@@ -36,7 +37,8 @@
         
         
         <section  class="hero-section">
-            <div id="particles-js"></div>
+            <div id="particles-js"><div class="rainbow-bg"></div></div>
+            
             
             <div class="hero-section-content">
                 <h1>Isaac Tapia</h1>
@@ -45,9 +47,7 @@
                 on web sites and web apps
                 </h2>
             </div>
-            <div class="image-container">
-                <p></p>
-            </div>
+            
         </section>
 
 
@@ -56,7 +56,7 @@
                 <div class="skills-content">
                     <h2>Skills</h2>
                     <h3>Working at the sweet spot<br>
-                    intersection of creativity and user friendly interfaces<br>
+                    intersection of creativity and user friendly UI / UX<br>
                     my goal is always to create memorable web experiences with:</h3>
                 </div>
 
@@ -162,19 +162,20 @@
 
             <div class="about-me-section-content">
                 <h2>About me</h2>
-                <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi perspiciatis similique vel alias, <br> cum eligendi illo delectus assumenda dolores laudantium necessitatibus minima at <br>officia architecto accusamus nisi dolorem labore id veritatis et voluptatem totam quisquam non sunt. <br>Repellat tempora error optio quas accusantium ipsam tempore quos voluptas. Laborum exercitationem, placeat necessitatibus pariatur distinctio sed velit impedit officia qui corporis soluta voluptate beatae provident deleniti totam veritatis vitae magnam ratione facere. Aperiam harum a commodi rerum.</h3>
-                <h3>Repellat, laborum. Provident, excepturi fugit natus ratione itaque quam dolorem saepe repellat ab, reprehenderit eaque aliquid iure iusto nesciunt accusamus error maxime, nihil sunt voluptate. Aut, harum. Praesentium aut sequi neque. Expedita exercitationem id ea ratione impedit nisi modi! Quaerat voluptate pariatur possimus quod animi a ullam optio architecto. Veritatis aperiam sequi officia iure, iste voluptate neque aliquam eum porro enim quaerat corporis sint deleniti rerum expedita laudantium, ratione, repudiandae numquam eaque ipsa. Maxime, laboriosam.</h3>
+                <h3>Hello there! I'm Isaac, a Front end developer and Web Designer freelancer based in Italy. I'm a guy passionate about technology, always looking for new ways and forms to leave a trace in my clients' designs.</h3>
+                <h3>When I'm not designing, you can find me learning new tech stuff, walking in the sun or training hard. Thanks for stopping by my portfolio!</h3>
             </div>
         </section>
 
 
 
         <section class="contact" id="contact">
-            <div class="contact-content">
-                <h2>Contact me</h2>
-                <h3>Want to hire me or just say 'Hi'?</h3>
-            </div>
-            <div class="contact-social">
+            <div class="contact-horizontal">
+                <div class="contact-content">
+                    <h2>Contact me</h2>
+                    <h3>Want to hire me or just say 'Hi'?</h3>
+                </div>
+                <div class="contact-social">
                 
                     <div class="contact-social-container">
                         <svg width="50" height="55" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -193,8 +194,13 @@
                             </svg><a href="https://github.com/IsaacIsTryingToCoding" target="_blank"><h3>Github</h3></a>                        
                     </div>
                 </div>
+            </div>
+            <div class="copyright">
+                <h3>©2024 Isaac Tapia</h3>
+            </div>
              
         </section>
+        
 
     </main>
 
