@@ -50,30 +50,47 @@ logo {
 nav {
     height: 100%;
     display: flex;
-    padding: 1rem 0;
+    
     align-items: center;
+    justify-content: space-between;
     transition: all ease-in-out 0.2s;
+
 }
 
 nav ul {
 
-    display: flex;
-    list-style: none;
-    gap: 5rem;
+    margin: 0;
+    padding: 0;    
+    list-style: none;    
     align-items: center;
+    
+    
+}
+
+
+
+
+nav ul li { 
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-inline: 30px;
 
 }
 
-nav ul li { 
-    font-size: 1.2rem;
-    font-weight: bold;
-    justify-content: center;
+@media screen and (max-width: 750px)  {
+    nav ul li {
+        margin-inline: 20px; 
+    }
+
 }
 
 nav ul li a{
+    display: flex;
     text-decoration: none;
     color: #C8D2F2;
     position: relative;  
+    
 }
 
 
@@ -87,7 +104,7 @@ nav ul li a::after {
     background-size: 200% 100%;
     bottom: 0rem;
     left: 0;
-    opacity: 0.7;
+    opacity: 0.9;
     transform: scale(0, 1);
     transition: 0.2s;
 }
@@ -96,7 +113,8 @@ nav ul li a:hover::after {
     transform: scale(1, 1);
 }
 
-nav ul button {    
+.contact-btn {
+    display: block;    
     position: relative;
     font-size: 1.2rem;
     font-weight: bold;
@@ -105,18 +123,18 @@ nav ul button {
     border-radius: 8px;
     border: none;
     text-align: center;
-    padding: 8px 12px;
+    padding: 6px 10px;
     cursor: pointer;
     z-index: 999;
     transition: ease 0.3s;    
 }
 
-nav ul button:hover {
+.contact-btn:hover {
     scale: 1.1;
 }
 
 
-nav ul button a {
+.contact-btn a {
     text-decoration: none;
     font-weight: bold;
     color: #0A192F;
@@ -142,12 +160,24 @@ nav ul button a {
     display: block;
     width: 100%;
     height: 3px;
-    margin: 4px 0;
+    margin: 7px 0;
     background-color: #C8D2F2;
     border-radius: 9999px;
 }
 
 
+
+.hamburger.is-active:before {
+    transform: rotate(-45deg) translate(-5px, 4px);
+}
+
+.hamburger.is-active:after {
+    transform: rotate(45deg) translate(-10px, -9px);
+}
+
+.hamburger.is-active .bar {
+    opacity: 0;
+} 
 
 /*Hero section*/
 
@@ -171,9 +201,26 @@ nav ul button a {
     right: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
-    background-color: #0A192F;
+    z-index: 2;
+    
     overflow: hidden;
+}
+
+.rainbow-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 120%;
+    height: 120%;
+    z-index: -1;    
+    background: conic-gradient(at 78% -22%, #0A192F 170deg, #B52929 180deg , #7729B5 184deg, #B5AF29 194deg, #29B52F 204deg,#0A192F 210deg);
+    filter:blur(25px);
+    opacity: 1;
+    overflow: hidden;
+    border: 1px solid red;
+    margin: -70px -80px -70px -70px;
 }
 
 .hero-section-content {
@@ -184,12 +231,7 @@ nav ul button a {
     z-index: 3;
 }
 
-.hero-section-content p {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
+
 
 .hero-section h1,
 .hero-section h2 {
@@ -204,20 +246,6 @@ nav ul button a {
     margin-top: 1.6rem;
 }
 
-.image-container {
-    position: absolute;
-    top: -20rem;
-    width: 50rem;
-    height: 180vh;  
-    padding: 0;
-    right: 5%;      
-    background: url('data:image/svg+xml,<svg width="1834" height="3116" viewBox="0 0 1834 3116" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(%23filter0_f_174_19)"><path d="M1329.82 314.239L1613.53 341.911L1413.12 2895.7L1129.41 2868.02L1329.82 314.239Z" fill="%23B52929"/><rect width="363.601" height="2608.1" transform="matrix(0.911772 0.410697 -0.340713 0.940167 1108.61 220)" fill="%23B5AF29"/><rect width="361.017" height="2580.23" transform="matrix(0.958161 0.286231 -0.233686 0.972312 1160.97 253.965)" fill="%2329B52F"/><rect width="275.919" height="2555.97" transform="matrix(0.98122 0.19289 -0.156217 0.987723 1253.92 286.566)" fill="%237729B5"/></g><defs><filter id="filter0_f_174_19" x="0" y="0" width="1833.53" height="3115.7" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur stdDeviation="110" result="effect1_foregroundBlur_174_19"/></filter></defs></svg>');
-    background-repeat: no-repeat;
-    background-position: center right;
-    background-size: contain;
-
-
-}
 
 
 
@@ -481,13 +509,12 @@ nav ul button a {
 
 .contact {
     width: 100%;
-    height: auto;
-    display: flex;
-    padding: 6rem 8%;
+    height: auto;    
+    padding: 6rem 8% 1rem;
     align-items: center;
     background-color: #C8D2F2;
     position: relative;
-    z-index: 1;
+    z-index: 0;
 }
 
 .contact::before {
@@ -499,8 +526,15 @@ nav ul button a {
     bottom: 0;
     background-image: radial-gradient(at 10% 0, #29B52F , #7729B5 , #B52929 ,#B5AF29 );    
     background-repeat: no-repeat;
-    opacity: .2;
-    z-index: 1;
+    opacity: 0.35;
+    z-index: 0;
+    
+}
+
+.contact-horizontal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact-content {
@@ -550,7 +584,7 @@ nav ul button a {
     background-size: 200% 100%;
     bottom: 0rem;
     left: 0;
-    opacity: 0.7;
+    opacity: 0.9;
     transform: scale(0, 1);
     transition: 0.2s;
 }
@@ -560,36 +594,77 @@ nav ul button a {
 }
 
 
+.copyright {
+    display: flex;
+    width: 100%;    
+    justify-content: center;
+    color: #0A192F;
+    z-index: 2;
+}
+
+.copyright h3 {
+    color: #0A192F;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 6rem;
+    z-index: 2;
+}
+
+
 /* General medias*/
 
 @media screen and (max-width:670px) {
     
     /* Navbar*/
     nav {
-        
+        display: flex;
+        flex-direction: column;
         position: absolute;
         top: 5rem;
         width: 100%;
-        right: -110%;
-        height: auto;
+        right: -110%;        
         padding: 0;
         height: calc(100vh - 5rem);
         background-color: #0A192F;
         opacity: 0.96 ;
         align-items:start;
+        justify-content: auto;
     }
 
-    nav ul {
-        padding: 3rem;
-        flex-direction: column;
+    nav ul {        
+        padding: 3rem 0;        
         width: 100%;
-        
-        gap: 3rem;
+
+    }
+
+    nav ul li {
+        display: flex;        
+        margin-top: 2rem;
+        justify-content: center;
+
+    }
+
+    nav ul li:nth-child(1) {
+        margin-top: 0;
+    }
+
+    nav ul li a {
+        justify-self: center;
+    
     }
     
     .open nav {
         right: 0;
     }
+
+    .close nav {
+        right: -100%;
+    }
+
+    .contact-btn {
+        margin-right: 1rem;
+    }
+    
 
 
     .hamburger {
@@ -602,17 +677,17 @@ nav ul button a {
         height: 85vh;
     }
 
-
+    .rainbow-bg {
+        width: 132%;
+        margin: -70px -70px -70px -70px;
+    }
 
     .hero-section-content {
         top: 40%;
         left: 8%;
+    
     }
 
-    .image-container {
-        right: -3rem;
-  
-    }
 
 
 
@@ -684,7 +759,7 @@ nav ul button a {
 
     /* Contact me section*/
 
-    .contact {
+    .contact-horizontal {
         flex-direction: column;
     }
 
